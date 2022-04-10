@@ -1,0 +1,134 @@
+.header {
+  height: 90px;
+  border-bottom: thin solid var(--grayish-blue);
+  display: flex;
+  align-items: center;
+
+  .menu {
+    margin-right: 1.25rem;
+    font-size: 1.25rem;
+    display: none;
+    cursor: pointer;
+  }
+
+  .logo {
+    display: flex;
+
+    img {
+      max-width: 125px;
+    }
+  }
+
+  .links {
+    height: 100%;
+    margin-left: 3rem;
+    display: flex;
+    gap: 1rem;
+
+    h3 {
+      position: relative;
+      height: 100%;
+      color: var(--dark-grayish-blue);
+      font-size: 0.9rem;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      transition: 100ms ease-in;
+
+      &::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        height: 3px;
+        background: var(--orange);
+        opacity: 0;
+        transition: 100ms ease-in;
+      }
+
+      &:hover {
+        color: unset;
+
+        &::after {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .user {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+
+    .cart {
+      position: relative;
+      display: flex;
+      align-items: center;
+
+      svg {
+        font-size: 1.25rem;
+      }
+
+      .count {
+        position: absolute;
+        top: -0.5rem;
+        right: -0.5rem;
+        width: 17.5px;
+        height: 17.5px;
+        border-radius: 50%;
+        background: var(--orange);
+        color: white;
+        font-size: 0.6rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+
+    .avatar {
+      position: relative;
+      width: 40px;
+      height: 40px;
+      margin-left: 1.5rem;
+      border-radius: 50%;
+
+      img {
+        max-width: 100%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .header {
+    height: 75px;
+    padding: 0 5vw;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    .menu {
+      display: flex;
+    }
+
+    .links {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 475px) {
+  .header {
+    padding: 0 7vw;
+
+    .user {
+      .cart {
+        display: none;
+      }
+    }
+  }
+}
